@@ -19,9 +19,10 @@ function makeInteractive() {
         group.addEventListener("mouseover", highlightPath);
         group.addEventListener("click", clickOnGroup);
     })
-    document.querySelectorAll(".color_btn").forEach(button => {
-        button.addEventListener("click", clickOnColor);
-    })
+    // document.querySelectorAll(".color_btn").forEach(button => {
+    //     button.addEventListener("click", clickOnColor);
+    // })
+    document.querySelector("input").addEventListener("input", colorSelect);
 }
 
 function highlightPath() {
@@ -39,9 +40,16 @@ function clickOnGroup() {
     this.style.fill = "grey";
 }
 
-function clickOnColor() {
-    console.log("clickOnColor");
+// function clickOnColor() {
+//     console.log("clickOnColor");
+//     if (elementToColor != undefined) {
+//         elementToColor.style.fill = this.getAttribute("fill");
+//     }
+// }
+
+function colorSelect() {
+    console.log("colorSelect");
     if (elementToColor != undefined) {
-        elementToColor.style.fill = this.getAttribute("fill");
+        elementToColor.style.fill = document.querySelector("input").value;
     }
 }
