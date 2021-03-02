@@ -12,10 +12,62 @@ main {
     margin: 0 auto;
 }
 
-#colorPicker {
-    max-width: 500px;
-    height: auto;
+#colors {
+    max-width: 700px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col_left {
+    height: 95px;
+    flex-grow: 1;
+    flex-basis: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.col_right {
+    flex-grow: 2;
+    flex-basis: 600px;
+}
+
+#colorPicker {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+button {
+    width: 100%;
+}
+
+.color_list {
+    display: flex;
+    font-size: 0.8rem;
+    margin: 15px 0 0 15px;
+    justify-content: flex-end;
+}
+
+.color_list>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color_list p {
+    margin: 5px 0 0 0;
+}
+
+.colorBox {
+    width: 60px;
+    height: 60px;
+    margin-left: 2px;
+}
+
+.colorBox:first-of-type {
+    border-radius: 50%;
 }
 
 #Layer_5_Image {

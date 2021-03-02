@@ -3,6 +3,7 @@
 window.addEventListener("DOMContentLoaded", init);
 
 let elementToColor;
+let colorValue;
 
 async function init() {
     console.log("init");
@@ -22,7 +23,8 @@ function makeInteractive() {
     // document.querySelectorAll(".color_btn").forEach(button => {
     //     button.addEventListener("click", clickOnColor);
     // })
-    document.querySelector("input").addEventListener("input", colorSelect);
+    document.querySelector("input").addEventListener("input", selectColor);
+    document.querySelector("button").addEventListener("click", clickSubmitColor);
 }
 
 function highlightPath() {
@@ -47,9 +49,30 @@ function clickOnGroup() {
 //     }
 // }
 
-function colorSelect() {
+function selectColor() {
     console.log("colorSelect");
     if (elementToColor != undefined) {
-        elementToColor.style.fill = document.querySelector("input").value;
+        colorValue = document.querySelector("input").value;
+        elementToColor.style.fill = colorValue;
+        
+        // function clickSubmitColor() {
+        //     document.querySelector("button").removeEventListener("click", clickSubmitColor);
+        //     submitColor(colorValue);
+        // }
+    }
+}
+
+function clickSubmitColor() {
+    console.log(colorValue);
+    const colorList = document.querySelector(".color_list");
+    
+    
+
+    const newColor = document.createElement("div");
+    newColor.innerHTML = `<div class="colorBox" style="background-color: ${colorValue}"></div><p class="hexValue">${colorValue.toUpperCase()}</p>`;
+    colorList.appendChild(newColor);
+    console.log(colorList.childElementCount);
+    if (colorList.childElementCount >= 10) {
+        colorList.removeChild(colorList.childNodes[0]);
     }
 }
