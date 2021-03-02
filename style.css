@@ -1,0 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
+#Layer_5_Image {
+    pointer-events: none;
+}
