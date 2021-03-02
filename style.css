@@ -2,6 +2,22 @@
     box-sizing: border-box;
 }
 
+main {
+    max-width: 1200px;  
+}
+
+#shoeSVG {
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#colorPicker {
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+
 #Layer_5_Image {
     pointer-events: none;
 }
