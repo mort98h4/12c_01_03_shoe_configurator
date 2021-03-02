@@ -2,6 +2,8 @@
 
 window.addEventListener("DOMContentLoaded", init);
 
+let elementToColor;
+
 async function init() {
     console.log("init");
     const response = await fetch("jordan-01.svg");
@@ -17,6 +19,9 @@ function makeInteractive() {
         group.addEventListener("mouseover", highlightPath);
         group.addEventListener("click", clickOnGroup);
     })
+    document.querySelectorAll(".color_btn").forEach(button => {
+        button.addEventListener("click", clickOnColor);
+    })
 }
 
 function highlightPath() {
@@ -30,4 +35,13 @@ function highlightPath() {
 
 function clickOnGroup() {
     console.log("clickOnGroup");
+    elementToColor = this;
+    this.style.fill = "grey";
+}
+
+function clickOnColor() {
+    console.log("clickOnColor");
+    if (elementToColor != undefined) {
+        elementToColor.style.fill = this.getAttribute("fill");
+    }
 }
